@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amal Gafoor – Web Developer & Cybersecurity Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafafa; --band:#f6efec; --ink:#2b2b2b; --muted:#666; --accent:#e8706a; --link:#c99a97; --card:#fff; --line:#e6e0dd;
+  --serif:"Libre Baskerville",Georgia,serif; --sans:"DM Sans",system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1a1a;--band:#242121;--ink:#f1ecea;--muted:#b3aaa7;--link:#d9a6a2;--card:#2a2727;--line:#3a3534;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1b1a1a;--band:#242121;--ink:#f1ecea;--muted:#b3aaa7;--link:#d9a6a2;--card:#2a2727;--line:#3a3534;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+
+/* nav */
+header{position:sticky;top:0;z-index:5;background:var(--bg)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav ul{display:flex;gap:40px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+nav a:hover{color:var(--accent)}
+.logo{width:28px;height:28px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:12px;text-decoration:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:20px;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);padding-bottom:60px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,48px);line-height:1.2;margin:0 0 20px}
+.hero p{max-width:420px;margin:0 0 14px;color:var(--muted)}
+.hero p a{color:var(--link);text-decoration:none}
+.hero p a:hover{text-decoration:underline}
+.btn{display:inline-block;margin-top:10px;padding:10px 22px;border:1.5px solid var(--ink);border-radius:30px;text-decoration:none;font-size:14px;font-weight:500;transition:background .2s,color .2s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.art{position:relative;display:flex;justify-content:center}
+.art .blob{position:absolute;width:75%;height:80%;top:12%;background:var(--band);border-radius:50% 50% 45% 55%;filter:blur(2px)}
+.art svg{position:relative;width:min(380px,92%);height:auto;animation:rise .9s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* sections */
+.band{background:var(--band)}
+section{padding:90px 0}
+h2{font-family:var(--serif);font-weight:400;font-size:30px;margin:0 0 10px}
+.lead{color:var(--muted);max-width:480px;margin:0 0 40px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;text-decoration:none;display:block}
+.card .thumb{aspect-ratio:16/10;display:grid;place-items:center;color:#fff;font-family:var(--serif);font-size:15px}
+.card .thumb span{display:flex;align-items:center;gap:8px}
+.card .thumb svg{width:34px;height:34px}
+.card:nth-child(1) .thumb{background:#e8706a}
+.card:nth-child(2) .thumb{background:#8aa6a3}
+.card:nth-child(3) .thumb{background:#d8b56a}
+.card .txt{padding:16px 18px 20px}
+.card h3{margin:0 0 4px;font-size:16px;font-weight:500}
+.card p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
+.skills h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 8px}
+.skills ul{margin:0;padding-left:18px;color:var(--muted)}
+.contact{text-align:center}
+#fun{padding-bottom:0}
+.fun{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px}
+.box h3{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:20px}
+.box input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit}
+.meter{height:8px;background:var(--line);border-radius:8px;margin:14px 0 10px;overflow:hidden}
+.meter span{display:block;height:100%;width:0;background:var(--accent);transition:width .25s,background .25s}
+.box p{margin:0;color:var(--muted);font-size:14px}
+button.btn{background:none;color:var(--ink);font-family:inherit;cursor:pointer}
+button.btn:hover{background:var(--ink);color:var(--bg)}
+@media(max-width:760px){.fun{grid-template-columns:1fr}}
+.contact .lead{margin:0 auto 24px}
+.contact .mail{font-family:var(--serif);font-size:clamp(20px,3.5vw,30px);color:var(--accent);text-decoration:none;word-break:break-all}
+.socials{display:flex;justify-content:center;gap:28px;margin-top:28px;flex-wrap:wrap}
+.socials a{font-size:14px;color:var(--muted);text-decoration:none}
+.socials a:hover{color:var(--accent)}
+footer{padding:30px 0 40px;text-align:center;font-size:13px;color:var(--muted)}
+
+@media(max-width:760px){
+  nav ul{gap:18px}
+  .hero{grid-template-columns:1fr;min-height:0;padding:40px 0 60px}
+  .art{order:-1}
+  .grid,.skills{grid-template-columns:1fr}
+  section{padding:60px 0}
+}
+@media(prefers-reduced-motion:reduce){.art svg{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="#top" aria-label="Home">AG</a>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#social">Social</a></li>
+      </ul>
+      <a href="#contact" style="text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>Welcome,</h1>
+      <p>I am <strong>Amal Gafoor</strong>, a Class 12 student from <strong>India</strong> learning <strong>web development</strong> and <strong>cybersecurity</strong>. I build simple websites and I am learning how to keep them safe.</p>
+      <p>I am in <strong>Class 12</strong> and building my skills through <a href="#work">personal and practice projects</a>.</p>
+      <a class="btn" href="#work">See my work</a>
+    </div>
+    <div class="art" aria-hidden="true">
+      <div class="blob"></div>
+      <svg viewBox="0 0 260 240" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" style="color:var(--ink)">
+        <rect x="40" y="50" width="180" height="124" rx="8" style="fill:var(--card)"/>
+        <rect x="52" y="62" width="156" height="78" rx="4" fill="#e8706a" stroke="none"/>
+        <path d="M104 86l-18 16 18 16M156 86l18 16-18 16M134 80l-8 44" stroke="#fff" stroke-width="5" fill="none"/>
+        <rect x="52" y="148" width="50" height="14" rx="2" fill="#8aa6a3" stroke="none"/>
+        <rect x="106" y="148" width="70" height="14" rx="2" fill="#d8b56a" stroke="none"/>
+        <rect x="180" y="148" width="28" height="14" rx="2" fill="#e8706a" stroke="none"/>
+        
+        <path d="M20 174h220l-14 22H34z" style="fill:var(--band)"/>
+        <path d="M214 14l20 8v14c0 14-9 22-20 28-11-6-20-14-20-28V22z" fill="#e8706a" stroke="none"/><path d="M205 38l7 7 12-14" stroke="#fff" stroke-width="3" fill="none"/>
+        <g transform="translate(0,-6)">
+          <path d="M18 22h52a6 6 0 0 1 6 6v22a6 6 0 0 1-6 6H48l-12 12V56H18a6 6 0 0 1-6-6V28a6 6 0 0 1 6-6z" style="fill:var(--card)"/>
+          <circle cx="28" cy="39" r="2.5" fill="currentColor" stroke="none"/>
+          <circle cx="44" cy="39" r="2.5" fill="currentColor" stroke="none"/>
+          <circle cx="60" cy="39" r="2.5" fill="currentColor" stroke="none"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="band">
+    <section id="work">
+      <div class="wrap">
+        <h2>Selected work</h2>
+        <p class="lead">A few of my student and practice projects. Replace these cards with your own projects and links.</p>
+        <div class="grid">
+          <a class="card" href="#">
+            <div class="thumb"><span>&lt;/&gt; Website</span></div>
+            <div class="txt"><h3>Personal portfolio website</h3><p>This site, built with HTML and CSS to practise layout and responsive design.</p></div>
+          </a>
+          <a class="card" href="https://staticfile-0f1e8.wasmer.app/" target="_blank" rel="noopener">
+            <div class="thumb"><span style="flex-direction:column;gap:6px"><svg viewBox="0 0 64 52" style="width:84px;height:auto" aria-hidden="true"><path d="M10 4h44a6 6 0 0 1 6 6v22a6 6 0 0 1-6 6H30L16 49V38h-6a6 6 0 0 1-6-6V10a6 6 0 0 1 6-6z" fill="#fff"/><rect x="24" y="18" width="16" height="12" rx="2" fill="#8aa6a3"/><path d="M27 18v-4a5 5 0 0 1 10 0v4" fill="none" stroke="#8aa6a3" stroke-width="2.5" stroke-linecap="round"/></svg>Secchat</span></div>
+            <div class="txt"><h3>Secchat</h3><p>A private chat website for two people, with accounts and secret room codes. Click to open it.</p></div>
+          </a>
+          <a class="card" href="https://sproutmarkup.com/p/aletter" target="_blank" rel="noopener">
+            <div class="thumb"><span style="flex-direction:column;gap:6px"><svg viewBox="0 0 64 48" style="width:92px;height:auto" aria-hidden="true"><rect x="2" y="4" width="60" height="40" rx="5" fill="#fff"/><path d="M5 9l27 21L59 9" fill="none" stroke="#c9a24f" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M32 29c-4-6-10-2-7 3l7 7 7-7c3-5-3-9-7-3z" fill="#e8706a"/></svg>A letter for you</span></div>
+            <div class="txt"><h3>A letter for you</h3><p>A personal apology web page I built and published online. Click to open it.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="fun">
+    <div class="wrap">
+      <h2>Try something fun</h2>
+      <p class="lead">Two little tools to play with. Nothing you type leaves your browser.</p>
+      <div class="fun">
+        <div class="box">
+          <h3>Password strength test</h3>
+          <input id="pw" type="text" autocomplete="off" placeholder="Type a test password" aria-label="Test password">
+          <div class="meter"><span id="bar"></span></div>
+          <p id="pwmsg">Type something to see how strong it is. Don’t use a real password.</p>
+        </div>
+        <div class="box">
+          <h3>Security tip generator</h3>
+          <p id="tip" aria-live="polite">Press the button to get a cybersecurity tip.</p>
+          <button class="btn" id="tipbtn" type="button">New tip</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About me</h2>
+      <p class="lead">I enjoy building things for the web and learning how to protect them. Write two or three sentences here about how you started and what you care about.</p>
+      <div class="skills">
+        <div>
+          <h3>Web development</h3>
+          <ul><li>HTML, CSS and basic JavaScript</li><li>Responsive pages that work on phones</li><li>Simple forms and layouts</li><li>Tools: VS Code, Git, GitHub (edit this list)</li></ul>
+        </div>
+        <div>
+          <h3>Cybersecurity</h3>
+          <ul><li>Networking and security basics</li><li>Strong passwords and safe login practices</li><li>Common web risks such as XSS and SQL injection</li><li>Practice on platforms like TryHackMe (edit this list)</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <section id="social" class="contact">
+      <div class="wrap">
+        <h2>Social</h2>
+        <p class="lead">Find my code and follow my learning.</p>
+        <div class="socials">
+          <a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">TryHackMe</a><a href="#">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's work together</h2>
+      <p class="lead">Tell me about your project and I will reply within two days.</p>
+      <a class="mail" href="mailto:orangepixelofficial@gmail.com">orangepixelofficial@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Amal Gafoor</footer>
+<script>
+(function(){
+  var pw=document.getElementById('pw'),bar=document.getElementById('bar'),msg=document.getElementById('pwmsg');
+  var levels=[['Very weak','#d9534f','Too easy to guess. Try a longer phrase.'],['Weak','#e8706a','Add more length and mix letters, numbers and symbols.'],['Okay','#d8b56a','Getting there. A few more characters will help.'],['Strong','#8aa6a3','Good. Longer is always better.'],['Very strong','#5b9b7a','Great. Use a different one for every account.']];
+  var common=['password','123456','qwerty','admin','letmein','iloveyou','abc123'];
+  pw.addEventListener('input',function(){
+    var v=pw.value;
+    if(!v){bar.style.width='0';msg.textContent='Type something to see how strong it is. Don’t use a real password.';return;}
+    var s=0;
+    if(v.length>=8)s++;
+    if(v.length>=12)s++;
+    if(/[a-z]/.test(v)&&/[A-Z]/.test(v))s++;
+    if(/\d/.test(v))s++;
+    if(/[^A-Za-z0-9]/.test(v))s++;
+    if(common.some(function(c){return v.toLowerCase().indexOf(c)>-1;}))s=Math.min(s,1);
+    var l=levels[Math.max(0,Math.min(4,s-(v.length<8?1:0)))];
+    bar.style.width=((levels.indexOf(l)+1)*20)+'%';
+    bar.style.background=l[1];
+    msg.textContent=l[0]+'. '+l[2];
+  });
+  var tips=['Use a different password for every account.','Turn on two-factor authentication wherever you can.','Check the address bar before you type a password. Fake sites look real.','Update your phone and apps. Updates fix security holes.','Never share an OTP with anyone, even if they say they are from your bank.','A long phrase is stronger than a short, complicated password.','Be careful with links in messages from people you don’t know.'];
+  var tip=document.getElementById('tip'),last=-1;
+  document.getElementById('tipbtn').addEventListener('click',function(){
+    var i;do{i=Math.floor(Math.random()*tips.length);}while(i===last);
+    last=i;tip.textContent=tips[i];
+  });
+})();
+</script>
+</body>
+</html>
